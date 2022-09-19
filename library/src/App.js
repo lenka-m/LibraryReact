@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+import Books from './components/Books';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>App Component</h1>
-      <h2> sjcksj</h2>
+      <NavBar/>
+      <Books/>
     </div>
   );
 }
