@@ -5,14 +5,11 @@ const Books = ({products, onAdd}) => {
   
 
   return (
-    <div className='all-books'>
-      {/*
-      <Book product  ={products[0]} />
-      <Book product  ={products[1]}/>
-  <Book product  ={products[2]}/> */}
+    <div className='BooksContainer'>
+
 
       {products.map( (prod) =>
-        <Book product = {prod} key = {prod.id} onAdd = {onAdd}/>
+        <Book product = {prod} key = {prod.id} onAdd = {onAdd} inRead={1}/>
       )}
 
 

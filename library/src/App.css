@@ -1,10 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+*{
+  box-sizing: 0;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
+
+}
 
 
 .NavBar{
-  padding:2px;
-  background-color: #D37506 ;
-  color: #D3D3CB;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+
 }
-.Card{
-  width: px;
+
+:any-link, li, button{
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
 }
+.NavBarLogo{
+  height: 50px;
+  cursor:pointer;
+}
+
+.NavBarList li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+footer{
+  background-color: black;
+  color:white;
+  padding:20px;
+  text-align: center;
+  position:fixed;
+  width: 100%;
+  bottom:0;
+}
+/*================================================================================================================*/
+.BooksContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.BookItem{
+  border: 1px #ccc solid;
+  padding: 20px;
+  margin:20px;
+  flex:1;
+
+
+  text-align: center;
+}
+u{
+  border: 1px white solid;
+  padding: 10px;
+}
+
+/*================================================================================================================*/
