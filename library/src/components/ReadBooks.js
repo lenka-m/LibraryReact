@@ -17,9 +17,3 @@ const ReadBooks = ({readBooks}) => {
 
 export default ReadBooks
 
-/*
-         {inRead ===1 ? <>
-            <a className = "MarkButton" onClick={()=>onAdd(product.id)}> <AiFillCheckCircle size='30px' color = 'gold'></AiFillCheckCircle> Mark as read</a>
-         </> : 
-             <p><AiFillStar color='gold' /> {product.review}</p>}
-*/

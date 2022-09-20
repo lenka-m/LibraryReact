@@ -10,6 +10,7 @@ const NavBar = ({numOfReadBooks}) => {
         <ul className='NavBarList'>
           <li><Link to = "/"> All Books</Link></li>
           <li><Link to = "/ReadBooks"> ReadBooks</Link></li>
+          <li><Link to = "/BooksToRead"> Books to Read</Link></li>
           <li> <u>{numOfReadBooks} / 10</u></li>
         </ul>
     </div>
