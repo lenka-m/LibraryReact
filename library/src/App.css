@@ -10,7 +10,7 @@
 
 
 .NavBar{
-  background-color: black;
+  background-color: #0C2D48;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +35,7 @@
 }
 
 footer{
-  background-color: black;
+  background-color: #0C2D48;
   color:white;
   padding:20px;
   text-align: center;
@@ -48,15 +48,34 @@ footer{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  
+
 }
+.MarkButton{
+  background-color: #0C2D48;
+  text-decoration: none;
+  color:gold;
+  padding: 10px;
+  
+}
+.MarkButton:hover{
+  transition:1s;
+  background-color: #145DA0;
+  color:gold;
+  
+}
+  
 .BookItem{
-  border: 1px #ccc solid;
   padding: 20px;
   margin:20px;
   flex:1;
-
-
+  background-color: #145DA0;
+  
   text-align: center;
+  border-radius: 9px;
+  min-width: 300px;
+  max-width: 400px;
+  
 }
 u{
   border: 1px white solid;

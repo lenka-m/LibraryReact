@@ -1,44 +1,68 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import Books from './components/Books';
+import AllBooks from './components/AllBooks';
 import {useState} from 'react';
 import ReadBooks from './components/ReadBooks';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Footer from './components/Footer';
 function App() {
-  //let numOfBooks=0;
-  const [numOfBooks, setNumOfBooks] = useState(0);
-  const products = [
+  
+  const [numOfReadBooks, setNumOfReadBooks] = useState(0);
+  const [readBooks, setReadBooks] = useState([]);
+  const [allBooksArray, setAllBooksArray] = useState([
     { id: 1,
       title: "Gone with the wind",
       pageNum: 103,
-      amount: 0
+      imageLink: "https://en.wikipedia.org/wiki/Gone_with_the_Wind_%28novel%29#/media/File:Gone_with_the_Wind_cover.jpg",
+      isRead: false, 
+      genre: "novel",
+      review: 0
     }, {
       id: 2,
       title: "The litle prince",
       pageNum: 45,
-      amount: 0
+      isRead: false,
+      genre: "novel",
+      review: 0
 
     },{
       id: 3,
       title: "Beleske o jednoj ani",
       pageNum: 167,
-      amount: 0
+      isRead: false,
+      genre: "novel",
+      review: 0
     },
-  ];
-function addBook(title){
-  setNumOfBooks(numOfBooks+1);
-  
-  console.log("Dodaj knjiug" + title)
+  ]);
+
+  function refreshReadBooks(){
+    let newBooks = allBooksArray.filter((book) => book.isRead== true);
+    setReadBooks(newBooks);
+  }
+
+  function markAsRead(id){  
+    console.log("Dodata je knjiga sa ID-jem:  " + id)
+    allBooksArray.forEach((book) =>{
+    if(book.id == id && book.isRead == false){
+      book.isRead = true;
+      setNumOfReadBooks(numOfReadBooks+1);
+      //console.log(book);
+    }
+    setAllBooksArray(allBooksArray);
+    refreshReadBooks();
+    console.log(allBooksArray);
+  });
 }
+
+
 
   return (
     <BrowserRouter className="App">
-      <NavBar numOfBooks = {numOfBooks}/>
+      <NavBar numOfReadBooks = {numOfReadBooks}/>
       <Routes>
-        <Route path="/" element={<Books products = {products} onAdd= {addBook}/>}/>
-        <Route path="/ReadBooks" element={<ReadBooks products = {products}/>} />
+        <Route path="/" element={<AllBooks BooksArray = {allBooksArray} onMarkAsRead= {markAsRead}/>}/>
+        <Route path="/ReadBooks" element={<ReadBooks readBooks = {readBooks}/>} />
       </Routes>
       <Footer></Footer>
       
