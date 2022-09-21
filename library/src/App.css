@@ -83,3 +83,25 @@ u{
 }
 
 /*================================================================================================================*/
+
+
+.filterButton{
+  align-self: center;
+  background-color: #0C2D48;
+  color:white;
+  font-size: 24px;
+  padding: 5px;
+  margin: 15px;
+  border-radius: 5px;
+  width: 100px;
+}
+.filterButton:hover{
+  background-color: white;
+  color:#0C2D48;
+  transition: 1s;
+  
+}
+.filterClass{
+  text-align: center;
+    
+}

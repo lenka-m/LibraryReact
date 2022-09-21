@@ -2,7 +2,7 @@ import React from 'react'
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import {AiFillCheckCircle, AiFillStar} from "react-icons/ai";
-const Book = ({ ABook, onMarkAsRead, inRead }) => {
+const Book = ({ ABook, onMarkAsRead, page }) => {
 
   return (
    <div className='BookItem'> 
@@ -14,11 +14,17 @@ const Book = ({ ABook, onMarkAsRead, inRead }) => {
             <b>Genre:</b> {ABook.genre}
             </p> </div>
          
-
-         {( ABook.isRead== false) ? <>
+         {( page === 2) ? <>
             <a className = "MarkButton" onClick={()=>onMarkAsRead(ABook.id)}> Mark as read</a>
-         </> : 
-             <p><AiFillStar color='gold' /> {ABook.review}</p>}
+         </> : <></>}
+
+         {( page == 1) ? <>
+            <p><AiFillStar color='gold' /> {ABook.review}</p>
+         </> : <></>}
+
+
+
+
       </div>
 
    </div>

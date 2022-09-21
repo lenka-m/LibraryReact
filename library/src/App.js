@@ -7,17 +7,19 @@ import ReadBooks from './components/ReadBooks';
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Footer from './components/Footer';
 import BooksToRead from './components/BooksToRead';
+import Filter from './components/Filter';
 function App() {
   
   const [numOfReadBooks, setNumOfReadBooks] = useState(0);
   const [readBooks, setReadBooks] = useState([]);
+  
   const [allBooksArray, setAllBooksArray] = useState([
     { id: 1,
       title: "Gone with the wind",
       pageNum: 103,
       imageLink: "https://en.wikipedia.org/wiki/Gone_with_the_Wind_%28novel%29#/media/File:Gone_with_the_Wind_cover.jpg",
       isRead: false, 
-      genre: "novel",
+      genre: "horror",
       review: 0
     }, {
       id: 2,
@@ -37,6 +39,7 @@ function App() {
     },
   ]);
   const [booksToRead, setBooksToRead] = useState(allBooksArray);
+  const[allFilterBooks, setAllFilterBooks] = useState(allBooksArray);
   function refreshReadBooks(){
     let newBooks = allBooksArray.filter((book) => book.isRead== true);
     setReadBooks(newBooks);
@@ -60,7 +63,19 @@ function App() {
     refreshBooksToRead();
     console.log(allBooksArray);
   });
-}
+  }
+  function selectFilter(filter){
+    console.log(filter);  
+    if(filter == "any"){
+      console.log(allFilterBooks);
+      setAllFilterBooks(allBooksArray);
+    } else {
+      let newBooks = allBooksArray.filter((book) => book.genre == filter);
+      setAllFilterBooks(newBooks)
+    
+    }
+
+  }
 
 
 
@@ -68,9 +83,9 @@ function App() {
     <BrowserRouter className="App">
       <NavBar numOfReadBooks = {numOfReadBooks}/>
       <Routes>
-        <Route path="/" element={<AllBooks BooksArray = {allBooksArray} onMarkAsRead= {markAsRead}/>}/>
+        <Route path="/" element={ <> <Filter onSelectFilter = {selectFilter}/><AllBooks BooksArray = {allFilterBooks} /> </>}/>
         <Route path="/ReadBooks" element={<ReadBooks readBooks = {readBooks}/>} />
-        <Route path="/BooksToRead" element={<BooksToRead booksToRead = {booksToRead}/>} />
+        <Route path="/BooksToRead" element={<BooksToRead booksToRead = {booksToRead} onMarkAsRead= {markAsRead}/>} />
       </Routes>
       <Footer></Footer>
       

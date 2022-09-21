@@ -1,13 +1,13 @@
 import React from 'react'
 import Book from './Book'
 
-const BooksToRead = ({booksToRead}) => {
+const BooksToRead = ({booksToRead, onMarkAsRead}) => {
   return (
-    <div>
-        <h3> Books on the reading list:</h3>
+    <div className='BooksContainer'>
+
         {booksToRead.map( (book) =>
             
-            <Book ABook = {book} key = {book.id} inRead = {0}/>
+            <Book ABook = {book} key = {book.id} page = {2} onMarkAsRead = {onMarkAsRead}/>
     
           )}
     </div>

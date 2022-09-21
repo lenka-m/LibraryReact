@@ -3,11 +3,11 @@ import Book from './Book'
 
 const ReadBooks = ({readBooks}) => {
   return (
-    <div>
-        <h3>Procitane knjige vuhu</h3>
+    <div className='BooksContainer'>
+        
         {readBooks.map( (book) =>
             
-        <Book ABook = {book} key = {book.id} inRead = {0}/>
+        <Book ABook = {book} key = {book.id} page = {1}/>
 
       )}
 

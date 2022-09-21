@@ -1,15 +1,14 @@
 import React from 'react'
 import Book from './Book'
 
-const AllBooks = ({BooksArray, onMarkAsRead}) => {
+const AllBooks = ({BooksArray}) => {
   
 
   return (
     <div className='BooksContainer'>
 
-
       {BooksArray.map( (book) =>
-        <Book ABook = {book} key = {book.id} onMarkAsRead = {onMarkAsRead} inRead={1}/>
+        <Book ABook = {book} key = {book.id}  page={0}/>
       )}
 
 
