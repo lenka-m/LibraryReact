@@ -68,7 +68,7 @@ function App() {
       genre: "novel",
     } , {
       id: 9,
-      title: "Brave new world",
+      title: "",
       pageNum: 113,
       isRead: false,
       genre: "novel",
