@@ -17,17 +17,16 @@ function App() {
     { id: 1,
       title: "Gone with the wind",
       pageNum: 103,
-      imageLink: "https://en.wikipedia.org/wiki/Gone_with_the_Wind_%28novel%29#/media/File:Gone_with_the_Wind_cover.jpg",
       isRead: false, 
       genre: "horror",
-      review: 0
+      
     }, {
       id: 2,
       title: "The litle prince",
       pageNum: 45,
       isRead: false,
       genre: "novel",
-      review: 0
+      
 
     },{
       id: 3,
@@ -35,8 +34,52 @@ function App() {
       pageNum: 167,
       isRead: false,
       genre: "novel",
-      review: 0
-    },
+      
+    },{
+        id: 4,
+        title: "The shining",
+        pageNum: 167,
+        isRead: false,
+        genre: "horror",
+        
+    },{
+      id: 5,
+      title: "It",
+      pageNum: 341,
+      isRead: false,
+      genre: "horror",
+    }, {
+      id: 6,
+      title: "The Great Gatsby",
+      pageNum: 120,
+      isRead: false,
+      genre: "novel",
+    }, {
+      id: 7,
+      title: "Brave new world",
+      pageNum: 113,
+      isRead: false,
+      genre: "novel",
+    }, {
+      id: 8,
+      title: "Brave new world",
+      pageNum: 113,
+      isRead: false,
+      genre: "novel",
+    } , {
+      id: 9,
+      title: "Brave new world",
+      pageNum: 113,
+      isRead: false,
+      genre: "novel",
+    }, {
+      id: 10,
+      title: "New man",
+      pageNum: 113,
+      isRead: false,
+      genre: "novel",
+    }
+    
   ]);
   const [booksToRead, setBooksToRead] = useState(allBooksArray);
   const[allFilterBooks, setAllFilterBooks] = useState(allBooksArray);
